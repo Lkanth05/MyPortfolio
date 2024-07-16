@@ -1,0 +1,613 @@
+$font-color: #212529;
+$background-color: #ffcc80;
+$primary-color: #0056b3;
+$darker-primary-color: darken($primary-color, 8%);
+$secondary-color: #68645d;
+$links-transition: background-color 300ms ease-in-out;
+$links-borders: 1px solid $darker-primary-color;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $background-color;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.btn {
+  background-color: $primary-color;
+  border: $links-borders;
+  padding: 10px 20px;
+  transition: $links-transition;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: $darker-primary-color;
+}
+
+/*Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: $background-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
+  border-radius: 10%;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $darker-primary-color;
+}
+
+/*Divider between sections */
+.divider {
+  width: 90%;
+  margin: auto;
+}
+
+/*Navbar */
+nav.navbar {
+  background-color: $primary-color;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+
+  .navbar-nav .nav-link {
+    color: lighten($font-color, 15%);
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: lighten($font-color, 25%);
+  }
+
+  .chiara-logo {
+    height: 28px;
+  }
+
+  .nav-contact-links {
+    display: flex;
+    justify-content: center;
+
+    a {
+      margin: 0 8px;
+    }
+
+    img {
+      width: 16px;
+      filter: grayscale(85%);
+      transition: filter 3000ms ease-in-out;
+    }
+
+    a:hover img {
+      filter: grayscale(100%);
+    }
+  }
+
+  .navbar-collapse {
+    justify-content: space-between;
+    text-align: center;
+  }
+}
+
+/*Hero section */
+section#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 90px 40px 30px;
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    color: $secondary-color;
+    font-size: 16px;
+  }
+
+  .hero-contact-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hero-contact-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background-color: $primary-color;
+      border: $links-borders;
+      border-radius: 50%;
+      margin: 8px;
+      transition: $links-transition;
+    }
+
+    .hero-contact-link:hover {
+      background-color: $darker-primary-color;
+    }
+
+    img {
+      width: 16px;
+    }
+  }
+
+  .chiara-img {
+    display: block;
+    width: 70%;
+    margin: 40px auto;
+  }
+}
+
+/*About section */
+section#about {
+  padding: 60px 20px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-bottom: 25px;
+  }
+
+  .about-text {
+    text-align: center;
+    margin-bottom: 50px;
+
+    p {
+      font-size: 15px;
+    }
+
+    a {
+      margin-top: 15px;
+    }
+  }
+
+  .skill-icons {
+    justify-content: center;
+  }
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .icon-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 75px;
+      height: 75px;
+      background-color: $primary-color;
+      border: $links-borders;
+      border-radius: 50%;
+      transition: $links-transition;
+    }
+
+    span {
+      font-size: 14px;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .figma {
+      height: 48px;
+    }
+
+    .html {
+      color: #e54c21;
+    }
+
+    .css {
+      color: #264de4;
+    }
+
+    .js {
+      color: #ffd600;
+    }
+
+    .bootstrap {
+      color: #860afb;
+    }
+  }
+
+  .icon:last-of-type {
+    margin-bottom: 0;
+  }
+
+  .icon:hover .icon-img {
+    background-color: $darker-primary-color;
+  }
+}
+
+/*Projects section */
+section#projects {
+  text-align: center;
+  padding: 60px 0 40px;
+
+  h2 {
+    margin-bottom: 40px;
+  }
+
+  .image-item {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    box-shadow: 5px 3px 20px 0px rgba(0, 0, 0, 0.2);
+  }
+
+  img {
+    border-radius: 5px;
+  }
+
+  .caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    color: #ffffff;
+    background-color: #000000cb;
+    font-size: 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 500ms ease-in-out;
+
+    span:last-of-type {
+      margin-top: 4px;
+      font-size: 15px;
+    }
+
+    .launch-buttons {
+      margin-top: 10px;
+    }
+
+    a {
+      width: 140px;
+      color: #ffffff;
+      background-color: #000000a6;
+      border: $links-borders;
+      padding: 10px 20px;
+      margin: 5px auto;
+    }
+  }
+
+  .image-item:hover .caption {
+    opacity: 1;
+  }
+}
+
+/*Contact section */
+section#contact {
+  padding-top: 60px;
+  padding-bottom: 50px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .row {
+    flex-direction: column-reverse;
+  }
+
+  .email-sent {
+    display: none;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 50px;
+
+    button {
+      display: block;
+      margin: 10px auto 0;
+    }
+  }
+
+  .contact-form {
+    width: 90%;
+    margin: 50px auto 0;
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    label,
+    input {
+      font-size: 15px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .contact-links {
+    width: fit-content;
+    margin: auto;
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      margin-top: 12px;
+      color: inherit;
+      text-decoration: none;
+
+      .contact-link-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 45px;
+        height: 45px;
+        background-color: $primary-color;
+        border: $links-borders;
+        border-radius: 50%;
+        transition: $links-transition;
+      }
+
+      img {
+        width: 25px;
+      }
+
+      span {
+        margin-left: 8px;
+      }
+    }
+
+    .contact-link:hover .contact-link-icon {
+      background-color: $darker-primary-color;
+    }
+  }
+
+  .contact-img {
+    margin-top: 50px;
+    transform: scaleX(-1);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  section#hero {
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    .hero-contact-links {
+      img {
+        width: 18px;
+      }
+    }
+  }
+
+  section#about {
+    .skills {
+      width: 70%;
+      margin: auto;
+    }
+  }
+
+  section#projects {
+    .caption {
+      a {
+        width: 160px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 576px) {
+  section#hero {
+    h1 {
+      font-size: 34px;
+    }
+
+    h2 {
+      font-size: 20px;
+    }
+
+    .chiara-img {
+      width: 50%;
+    }
+
+    .btn {
+      display: block;
+      width: 50%;
+      margin: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section#hero {
+    .hero-contact-links {
+      .hero-contact-link {
+        width: 45px;
+        height: 45px;
+      }
+
+      img {
+        width: 22px;
+      }
+    }
+  }
+
+  section#about {
+    .about-text {
+      padding: 0 50px;
+    }
+
+    .skills {
+      width: 90%;
+    }
+  }
+
+  section#projects {
+    .image-item {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  section#contact {
+    .contact-form {
+      width: 80%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  section#hero {
+    padding-top: 110px;
+    padding-bottom: 120px;
+
+    .row {
+      margin-top: 50px;
+    }
+
+    .row .hero-title {
+      padding-top: 50px;
+      padding-left: 100px;
+
+      h1,
+      h2,
+      .hero-contact-links {
+        text-align: left;
+      }
+
+      .hero-contact-links {
+        justify-content: start;
+        margin-top: 20px;
+
+        .hero-contact-link:first-of-type {
+          margin-left: 0;
+        }
+
+        img {
+          width: 24px;
+        }
+      }
+    }
+
+    .chiara-img {
+      width: 90%;
+      margin: 0;
+    }
+
+    .btn {
+      margin: 40px 0 0;
+    }
+  }
+
+  section#about {
+    h2 {
+      margin-bottom: 35px;
+    }
+
+    .about-text {
+      text-align: left;
+      padding: 0;
+      padding: 0 40px;
+    }
+
+    .skills {
+      width: 33.33333333%;
+      margin: 0;
+
+      h3 {
+        font-size: 25px;
+      }
+    }
+  }
+
+  section#projects {
+    .row {
+      justify-content: center;
+    }
+  }
+
+  section#contact {
+    h2 {
+      margin-bottom: 40px;
+    }
+
+    .row {
+      flex-direction: row;
+    }
+
+    .contact-form {
+      margin-top: 0;
+
+      label,
+      input {
+        font-size: 16px;
+      }
+
+      button {
+        width: 30%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  section#hero {
+    h1 {
+      font-size: 38px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  section#hero {
+    h1 {
+      font-size: 42px;
+    }
+
+    h2 {
+      font-size: 28px;
+    }
+  }
+
+  section#about {
+    p {
+      font-size: 17px;
+    }
+  }
+
+  section#contact {
+    .contact-form {
+      width: 70%;
+
+      label,
+      input {
+        font-size: 17px;
+      }
+    }
+  }
+}
